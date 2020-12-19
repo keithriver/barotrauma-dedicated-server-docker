@@ -41,4 +41,4 @@ echo '</ClientPermissions>' >> $CLIENT_PERMISSIONS_XML
 		@ShutdownOnFailedCommand \
 		@NoPromptForPassword \
 		+login anonymous \
-		+app_run ${STEAMAPPDIR} \
+		+app_run ${STEAMAPPID} \
