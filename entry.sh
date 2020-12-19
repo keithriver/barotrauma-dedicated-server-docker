@@ -37,4 +37,8 @@ done
 echo '</ClientPermissions>' >> $CLIENT_PERMISSIONS_XML
 
 # Run the server!
-"${STEAMAPPDIR}/DedicatedServer"
+"${STEAMCMDDIR}/steamcmd.sh" "${STEAMCMDDIR}/steamcmd.sh" \
+		@ShutdownOnFailedCommand \
+		@NoPromptForPassword \
+		+login anonymous \
+		+app_run ${STEAMAPPDIR} \
