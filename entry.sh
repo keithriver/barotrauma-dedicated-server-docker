@@ -10,6 +10,7 @@
 		+'quit'
 
 # Update settings.xml using ENV varaibles
+cat ${STEAMAPPDIR}/serversettings.xml
 SETTINGS_XML=${STEAMAPPDIR}/serversettings.xml
 sed -i 's/password=.*/password="'"$BAR_PASSWORD"'"/' "${SETTINGS_XML}"
 sed -i 's/name=.*/name="'"$BAR_NAME"'"/' "${SETTINGS_XML}"
@@ -37,9 +38,4 @@ done
 echo '</ClientPermissions>' >> $CLIENT_PERMISSIONS_XML
 
 # Run the server!
-"${STEAMCMDDIR}/steamcmd.sh" "${STEAMCMDDIR}/steamcmd.sh" \
-		@ShutdownOnFailedCommand \
-		@NoPromptForPassword \
-		+login anonymous \
-        +force_install_dir ${STEAMAPPDIR} \
-		+app_run ${STEAMAPPID} \
+"${STEAMAPPDIR}/DedicatedServer"
